@@ -1,0 +1,11 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace The_Weather_App.ViewModels.Helpers
+{
+    public partial class AccuWeatherHelper
+    {
+        public const string API_KEY = "TYPE YOUR API KEY HERE";
+    }
+}
