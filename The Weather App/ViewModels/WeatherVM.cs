@@ -44,7 +44,27 @@ namespace The_Weather_App.ViewModels
             }
         }
 
+        public WeatherVM()
+        {
+            if(DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
+            {
+                SelectedCity = new City()
+                {
+                    LocalizedName = "Warsaw"
+                };
+                CurrentConditions = new CurrentConditions()
+                {
+                    WeatherText = "Partly Cloudy",
+                    Temperature = new Temperature
+                    {
+                        Metric = new Units
+                        {
 
+                        }
+                    }
+                };
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
