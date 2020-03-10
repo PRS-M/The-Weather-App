@@ -40,7 +40,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Margin="0,10">
                 <TextBlock DataContext="{StaticResource vm}"
-                           Text="{Binding selectedCity.LocalizedName}"
+                           Text="{Binding SelectedCity.LocalizedName}"
                            Foreground="Cornsilk"
                            FontSize="20"
                            Margin="20,0"/>
