@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace The_Weather_App.ViewModels.Commands
 {
-    class SearchCommand : ICommand
+    public class SearchCommand : ICommand
     {
         public WeatherVM VM { get; set; }
 
