@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using The_Weather_App.Models;
+using The_Weather_App.ViewModels.Commands;
 using The_Weather_App.ViewModels.Helpers;
 
 namespace The_Weather_App.ViewModels
@@ -45,6 +46,8 @@ namespace The_Weather_App.ViewModels
             }
         }
 
+        public SearchCommand SearchCommand { get; set; }
+
         public WeatherVM()
         {
             if(DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
@@ -65,6 +68,8 @@ namespace The_Weather_App.ViewModels
                     }
                 };
             }
+
+            SearchCommand = new SearchCommand(this);
         }
 
         public async void MakeQuery()
