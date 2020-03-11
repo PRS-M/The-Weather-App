@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using The_Weather_App.Models;
+using The_Weather_App.ViewModels.Helpers;
 
 namespace The_Weather_App.ViewModels
 {
@@ -64,6 +65,11 @@ namespace The_Weather_App.ViewModels
                     }
                 };
             }
+        }
+
+        public async void MakeQuery()
+        {
+            var cities = await AccuWeatherHelper.GetCities(Query);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
