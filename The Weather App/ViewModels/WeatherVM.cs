@@ -67,7 +67,7 @@ namespace The_Weather_App.ViewModels
                     {
                         Metric = new Units
                         {
-
+                            Value = "21"
                         }
                     }
                 };
