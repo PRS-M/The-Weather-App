@@ -46,6 +46,7 @@ namespace The_Weather_App.ViewModels
             {
                 selectedCity = value;
                 OnPropertyChanged("SelectedCity");
+                GetCurrentConditions();
             }
         }
 
@@ -76,9 +77,11 @@ namespace The_Weather_App.ViewModels
             Cities = new ObservableCollection<City>();
         }
 
-        private void GetCurrentConditions()
+        private async void GetCurrentConditions()
         {
-
+            Query = String.Empty;
+            Cities.Clear();
+            CurrentConditions = await AccuWeatherHelper.GetCurrentConditions(SelectedCity.Key);
         }
 
         public async void MakeQuery()
