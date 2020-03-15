@@ -46,7 +46,8 @@ namespace The_Weather_App.ViewModels
             {
                 selectedCity = value;
                 OnPropertyChanged("SelectedCity");
-                GetCurrentConditions();
+                if (!DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
+                    GetCurrentConditions();
             }
         }
 
