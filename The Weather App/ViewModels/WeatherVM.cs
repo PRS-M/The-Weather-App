@@ -45,9 +45,13 @@ namespace The_Weather_App.ViewModels
             set
             {
                 selectedCity = value;
-                OnPropertyChanged("SelectedCity");
-                if (!DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
-                    GetCurrentConditions();
+
+                if (selectedCity != null)
+                {
+                    OnPropertyChanged("SelectedCity");
+                    if (!DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
+                        GetCurrentConditions();
+                }
             }
         }
 
@@ -55,7 +59,7 @@ namespace The_Weather_App.ViewModels
 
         public WeatherVM()
         {
-            if(DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
+            if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
             {
                 SelectedCity = new City()
                 {
@@ -81,8 +85,8 @@ namespace The_Weather_App.ViewModels
         private async void GetCurrentConditions()
         {
             Query = String.Empty;
-            Cities.Clear();
             CurrentConditions = await AccuWeatherHelper.GetCurrentConditions(SelectedCity.Key);
+            Cities.Clear();
         }
 
         public async void MakeQuery()
